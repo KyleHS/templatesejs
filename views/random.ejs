@@ -7,7 +7,10 @@
 </head>
 <body>
     <h1>Random Number: <%= rand %></h1>  <!--We created this in the index.js file and now are referencing it here-->
-   
-    
+    <% if(num % 2 === 0) { %>
+    <h2>That is an even number!</h2>
+    <% } else { %>  <!--you have to still use javascript syntax within-->
+    <h2>That is an odd number!</h2> <!--do not need the syntax here-->
+    <% } %>
 </body>
 </html>

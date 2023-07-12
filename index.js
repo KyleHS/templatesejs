@@ -9,6 +9,13 @@ app.get('/', (req, res) => {
     res.render('home.ejs')  //can also just use 'home' since we referenced ejs in app.set
 });
 
+app.get('/cats', (req, res) => {
+    const cats = [
+        'Ralsei', 'Susie', 'Kris', 'Winton'
+    ]
+    res.render('cats', { cats });
+})
+
 app.get('/rand', (req, res) => {
     const num = Math.floor(Math.random() * 10) + 1
     res.render('random', { rand: num})  //can also just use 'home' since we referenced ejs in app.set
