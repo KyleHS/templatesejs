@@ -8,6 +8,17 @@
 <body>
     <h1>Browsing The <%= name %> subreddit</h1>
     <h2><%= description %></h2>
-    <p><%= subscribers %></p>
+    <p><%= subscribers %> Subscribers</p>
+    <hr>
+
+    <% for(let post of posts) { %>  <!--conditional allowing every post to show an image, title, and author of title-->
+        <article>
+            <p><%= post.title %> - <b><%=post.author %></b></p>
+            <%  if(post.img) { %>
+                <img src="<%= post.img%>" alt="">
+            <% } %>
+        </article>
+
+    <% } %>
 </body>
 </html>
