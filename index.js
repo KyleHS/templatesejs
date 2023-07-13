@@ -22,7 +22,7 @@ app.get('/cats', (req, res) => {
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
     const data = redditData[subreddit];
-    if (data) {
+    if (data) {  //if subreddit isn't found notfound.ejs page will load instead
         res.render('subreddit', { ...data });
     } else {
         res.render('notfound', { subreddit })
